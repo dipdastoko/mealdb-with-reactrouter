@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Meal = props => {
     const { strMeal, strMealThumb, strInstructions, idMeal } = props.meal;
     const dynamicPath = `/resturant/${idMeal}`;
+
+    const navigates = useNavigate();
+    const handleClick = () => {
+        navigates(`/resturant/${idMeal}`);
+    }
 
 
     return (
@@ -23,6 +28,7 @@ const Meal = props => {
                         <Link to={dynamicPath}><Button>Click to See Details</Button></Link>
                     </Card.Body>
                 </Card>
+                <Button variant='dark' onClick={handleClick}>Vist Meal</Button>
             </Col>
 
 

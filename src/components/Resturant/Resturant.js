@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Meal from '../../Meal/Meal';
+import Meal from '../Meal/Meal';
 
 const Resturant = () => {
     const [meals, setMeals] = useState([]);

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Meal = props => {
-    const { strMeal, strMealThumb, strInstructions } = props.meal;
+    const { strMeal, strMealThumb, strInstructions, idMeal } = props.meal;
+    const dynamicPath = `/resturant/${idMeal}`;
+
+
     return (
         <div>
             <Col>
@@ -15,9 +18,9 @@ const Meal = props => {
                             <span className='d-block text-truncate'>
                                 {strInstructions}
                             </span>
-                            <Link to='/'>See More</Link>
+                            <Link to={dynamicPath}>See More</Link>
                         </Card.Text>
-                        <Link to=''><Button>Click to See Details</Button></Link>
+                        <Link to={dynamicPath}><Button>Click to See Details</Button></Link>
                     </Card.Body>
                 </Card>
             </Col>
